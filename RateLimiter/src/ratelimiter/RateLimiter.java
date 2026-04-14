@@ -50,7 +50,7 @@ public class RateLimiter {
 
     private void removeExpired(Deque<Long> timestamps, long now) {
         long validAfter = now - windowMillis;
-        while(!timestamps.isEmpty() && timestamps.getFirst() <= validAfter) {
+        while(!timestamps.isEmpty() && timestamps.getFirst() < validAfter) {
             timestamps.pollFirst();
         }
     }

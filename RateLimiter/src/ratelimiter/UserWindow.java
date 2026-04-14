@@ -1,8 +1,11 @@
 package ratelimiter;
 
+import lombok.Getter;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+@Getter
 public class UserWindow {
     private final Deque<Long> timestamps;
 
@@ -10,7 +13,4 @@ public class UserWindow {
         this.timestamps = new ArrayDeque<>();
     }
 
-    public Deque<Long> getTimestamps() {
-        return timestamps;
-    }
 }
